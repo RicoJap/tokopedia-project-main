@@ -1,0 +1,10 @@
+.BottomNavigation-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* background-color: #7D4CDB !important; */
+}
+
+/* .BottomNavigation-action {
+    color: #fff !important;
+} */
