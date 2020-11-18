@@ -18,7 +18,7 @@ const AppWrapper = () => {
     );
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <ThemeProvider theme={theme}>
                 <Provider store={createStoreWithMiddleware(rootReducer)}>
                     <Switch>
