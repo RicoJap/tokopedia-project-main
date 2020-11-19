@@ -19,6 +19,17 @@ const styles = {
   },
 };
 
+/**
+ * NothingToShow Component
+ *
+ * @since  19/11/2020
+ * @access (public)
+ *
+ * @type     Functional Component
+ * @param {Object}  label  the label to be rendered in the middle of the page
+ *
+ */
+
 const NothingToShow = ({ label }) => {
   return (
     <div>
