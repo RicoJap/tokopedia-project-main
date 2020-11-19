@@ -67,3 +67,10 @@ export const setCurrentMyPokemonsListPage = (newPage) => {
 		payload: newPage
 	}
 }
+
+export const setSelectedBottomAction = (bottomAction) => {
+	return {
+		type: types.SET_SELECTED_BOTTOM_ACTION,
+		payload: bottomAction
+	}
+}

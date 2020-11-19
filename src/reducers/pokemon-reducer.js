@@ -18,6 +18,7 @@ const initialState = {
     pageLimit: 20,
     currentPokemonsListPage: 1,
     currentMyPokemonsListPage: 1,
+    selectedBottomAction: 0 // the index of the bottom action used by the Material-UI library to determine which destination is rendered
 };
 
 function PokemonReducer(state = initialState, action) {
@@ -144,6 +145,13 @@ function PokemonReducer(state = initialState, action) {
                 ...state,
                 currentMyPokemonsListPage: newPage,
             };
+        }
+        case types.SET_SELECTED_BOTTOM_ACTION: {
+            const selectedBottomAction = action.payload;
+            return {
+                ...state,
+                selectedBottomAction
+            }
         }
         default:
             return state;
