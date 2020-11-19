@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="MuiAvatar-root MuiAvatar-circle"
+  data-testid="image"
+>
+  <img
+    className="MuiAvatar-img"
+    src="pokeball-big.png"
+  />
+</div>
+`;

@@ -32,7 +32,7 @@ const styles = {
 
 const NothingToShow = ({ label }) => {
   return (
-    <div>
+    <div data-testid="nothing-to-show">
       <Image src={Pokeball} variant="square" style={styles.image} />
       <Typography
         variant="p"

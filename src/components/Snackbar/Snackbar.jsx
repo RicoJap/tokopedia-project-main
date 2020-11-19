@@ -23,7 +23,7 @@ const Snackbar = ({
   snackbarStatus,
   autoHideDuration,
   handleClose,
-  variant,
+  variant = "filled",
   ...attributes
 }) => {
   const handleSnackbarClose = (_, reason) => {
@@ -38,6 +38,7 @@ const Snackbar = ({
       open={snackbarStatus.open}
       autoHideDuration={autoHideDuration}
       onClose={handleSnackbarClose}
+      data-testid={'snackbar'}
       {...attributes}
     >
       <Alert

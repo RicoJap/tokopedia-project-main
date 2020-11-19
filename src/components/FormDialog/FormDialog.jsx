@@ -38,17 +38,18 @@ const FormDialog = ({
 }) => {
   return (
     <MuiDialog open={open}>
-      <MuiDialogTitle>{dialogTitle}</MuiDialogTitle>
+      <MuiDialogTitle data-testid="dialog-title">{dialogTitle}</MuiDialogTitle>
       <MuiDialogContent>
-        <MuiDialogContentText>{dialogSubTitle}</MuiDialogContentText>
+        <MuiDialogContentText data-testid="dialog-subtitle">{dialogSubTitle}</MuiDialogContentText>
         <MuiTextField
           autoFocus
           margin="dense"
           label={textFieldLabel}
           type="text"
           fullWidth
-          value={textFieldValue}
+          // value={textFieldValue}
           onChange={textFieldOnChange}
+          inputProps={{'data-testid': "dialog-text-field"}}
         />
       </MuiDialogContent>
       <MuiDialogActions>

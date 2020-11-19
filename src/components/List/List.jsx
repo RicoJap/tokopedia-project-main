@@ -45,7 +45,7 @@ const List = ({
             {!isEmpty(listItem[iconSelector]) && (
               <MuiListItemIcon>{listItem[iconSelector]}</MuiListItemIcon>
             )}
-            <MuiListItemText primary={toTitleCase(listItem[labelSelector])} />
+            <MuiListItemText data-testid={listItem[labelSelector]} primary={toTitleCase(listItem[labelSelector])} />
           </MuiListItem>
         );
       })}

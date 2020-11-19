@@ -54,7 +54,8 @@ const BottomNavigation = ({ actions, selectedAction, onChange, ...props }) => {
             classes={bottomNavigationActionClasses}
             key={i}
             label={action.label}
-            icon={action.icon}
+            icon={!!action.icon && action.icon}
+            data-testid={action.label}
           />
         );
       })}

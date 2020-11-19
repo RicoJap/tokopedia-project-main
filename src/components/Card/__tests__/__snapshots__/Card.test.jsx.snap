@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root makeStyles-root-1 MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <div
+    className="MuiCardContent-root"
+  >
+    <span
+      className="MuiTypography-root"
+      data-testid="card-label"
+    >
+      Test Card
+    </span>
+  </div>
+</div>
+`;

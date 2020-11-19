@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<ul
+  className="MuiList-root MuiList-padding"
+>
+  <li
+    className="MuiListItem-root makeStyles-root-1 MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+      data-testid="Mock List Item 1"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Mock List Item 1
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root makeStyles-root-1 MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+      data-testid="Mock List Item 2"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Mock List Item 2
+      </span>
+    </div>
+  </li>
+  <li
+    className="MuiListItem-root makeStyles-root-1 MuiListItem-gutters MuiListItem-divider"
+    disabled={false}
+  >
+    <div
+      className="MuiListItemText-root"
+      data-testid="Mock List Item 3"
+    >
+      <span
+        className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+      >
+        Mock List Item 3
+      </span>
+    </div>
+  </li>
+</ul>
+`;

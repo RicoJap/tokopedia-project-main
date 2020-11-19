@@ -43,7 +43,7 @@ const Card = ({
   return (
     <MuiCard classes={cardStyles} {...attributes}>
       <MuiCardContent style={styles.cardContent}>
-        <Typography label={label} variant={labelVariant} />
+        <Typography label={label} variant={labelVariant} data-testid="card-label" />
         {separateContentAndButtons && <Divider style={styles.divider} />}
         {!!cardActionsChildren ? (
           <MuiCardActions style={styles.cardActions}>

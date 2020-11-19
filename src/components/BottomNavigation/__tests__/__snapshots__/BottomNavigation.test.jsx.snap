@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="MuiBottomNavigation-root makeStyles-root-1"
+>
+  <button
+    className="MuiButtonBase-root MuiBottomNavigationAction-root makeStyles-root-2"
+    data-testid="Action 1"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <span
+      className="MuiBottomNavigationAction-wrapper"
+    >
+      <span
+        className="MuiBottomNavigationAction-label"
+      >
+        Action 1
+      </span>
+    </span>
+  </button>
+  <button
+    className="MuiButtonBase-root MuiBottomNavigationAction-root makeStyles-root-2"
+    data-testid="Action 2"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <span
+      className="MuiBottomNavigationAction-wrapper"
+    >
+      <span
+        className="MuiBottomNavigationAction-label"
+      >
+        Action 2
+      </span>
+    </span>
+  </button>
+</div>
+`;

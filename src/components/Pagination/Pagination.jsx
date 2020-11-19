@@ -23,6 +23,7 @@ const Pagination = ({ pages, ...attributes }) => {
   const paginationClasses = usePaginationStyles();
   return (
     <MuiPagination
+      data-testid="pagination"
       classes={paginationClasses}
       count={pages}
       color="primary"

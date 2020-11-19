@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  data-testid="nothing-to-show"
+>
+  <div
+    className="MuiAvatar-root MuiAvatar-square"
+    data-testid="image"
+    style={
+      Object {
+        "display": "block",
+        "height": 100,
+        "margin": "auto",
+        "paddingTop": "50%",
+        "width": 100,
+      }
+    }
+  >
+    <img
+      className="MuiAvatar-img"
+      src="pokeball-big.png"
+    />
+  </div>
+  <span
+    className="MuiTypography-root MuiTypography-colorTextSecondary"
+    style={
+      Object {
+        "display": "block",
+        "margin": "1em",
+        "textAlign": "center",
+      }
+    }
+  >
+    Test Label
+  </span>
+</div>
+`;

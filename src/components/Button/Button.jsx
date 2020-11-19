@@ -15,7 +15,7 @@ import MuiButton from "@material-ui/core/Button";
 
 const Button = ({ label, variant = "outlined", ...attributes }) => {
   return (
-    <MuiButton variant={variant} color="primary" {...attributes}>
+    <MuiButton data-testid="button" variant={variant} color="primary" {...attributes}>
       {label}
     </MuiButton>
   );
