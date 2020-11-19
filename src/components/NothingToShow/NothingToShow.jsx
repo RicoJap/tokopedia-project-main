@@ -1,7 +1,8 @@
 import React from "react";
-import Pokeball from "../../assets/pokeball-big.png";
 import Image from "../Image/Image";
 import Typography from "../Typography/Typography";
+
+import Pokeball from "../../assets/pokeball-big.png";
 
 const styles = {
   image: {

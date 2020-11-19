@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import Card from "../../components/Card/Card";
 import Pagination from "../../components/Pagination/Pagination";
 
-import { toTitleCase } from "../../utilities/string.utils";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import {
   fetchPokemonDetail,
   fetchPokemonsList,
   setCurrentPokemonsListPage,
 } from "../../actions/actions";
+import { toTitleCase } from "../../utilities/string.utils";
 import { ceiling } from "../../utilities/number.utils";
 import { isEmpty } from "../../utilities/check-if-empty.utils";
 
@@ -38,17 +39,12 @@ const PokemonsList = () => {
     };
   });
 
+  // To get the pokemons list from API in the first component mount
   useEffect(() => {
-    const initialise = async () => {
-      await dispatch(
-        fetchPokemonsList({ offset: pageOffset, limit: pageLimit })
-      );
-    };
-    initialise();
+    dispatch(fetchPokemonsList({ offset: pageOffset, limit: pageLimit }));
   }, []);
 
   useEffect(() => {
-    console.log("abcabc", allPokemonsList);
     if (!isEmpty(allPokemonsList[currentPokemonsListPage])) {
       setCurrentlyDisplayedPokemonsList(
         allPokemonsList[currentPokemonsListPage]
@@ -56,6 +52,9 @@ const PokemonsList = () => {
     }
   }, [allPokemonsList]);
 
+	/* When the user changes page, it first checks if the pokemon data set for that page exists
+	 * if not then, calls the API for the next data set
+	 */
   const onChangePage = (_, newPage) => {
     dispatch(setCurrentPokemonsListPage(newPage));
     if (isEmpty(allPokemonsList[newPage])) {
@@ -70,6 +69,7 @@ const PokemonsList = () => {
     }
   };
 
+	// On click event handler when the user clicks on a pokemon card
   const onPokemonClick = (pokemonName) => {
     dispatch(fetchPokemonDetail(pokemonName));
     history.push(`/pokemon/${pokemonName}`);

@@ -4,7 +4,7 @@ import { isEmpty } from "../utilities/check-if-empty.utils";
 
 const ROOT_URL = `https://pokeapi.co/api/v2`;
 
-export const fetchPokemonsList = (params) => {
+export const fetchPokemonsList = async (params) => {
     let url = `${ROOT_URL}/pokemon`;
     if (!isEmpty(params)) {
         const additionalParams = Object.keys(params)

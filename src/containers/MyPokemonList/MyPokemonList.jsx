@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import Card from "../../components/Card/Card";
 import Pagination from "../../components/Pagination/Pagination";
-import { useDispatch, useSelector } from "react-redux";
+import NothingToShow from "../../components/NothingToShow/NothingToShow";
+
 import {
   fetchMyPokemons,
   fetchPokemonDetail,
@@ -9,10 +13,8 @@ import {
   setCurrentMyPokemonsListPage,
 } from "../../actions/actions";
 import { ceiling } from "../../utilities/number.utils";
-import { useHistory } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { isEmpty } from "../../utilities/check-if-empty.utils";
-import NothingToShow from "../../components/NothingToShow/NothingToShow";
 
 const styles = {
   cardContent: {
@@ -40,19 +42,21 @@ const MyPokemonList = () => {
     setCurrentlyDisplayedMyPokemonsList,
   ] = useState([]);
 
-  const myPokemonsList = useSelector((state) => {
-    return state.PokemonReducer.myPokemonsList;
-  });
-  const myPokemonsListCount = useSelector((state) => {
-    return state.PokemonReducer.myPokemonsListCount;
-  });
-  const currentMyPokemonsListPage = useSelector((state) => {
-    return state.PokemonReducer.currentMyPokemonsListPage;
-  });
-  const pageLimit = useSelector((state) => {
-    return state.PokemonReducer.pageLimit;
+  const {
+    myPokemonsList,
+    myPokemonsListCount,
+    currentMyPokemonsListPage,
+    pageLimit,
+  } = useSelector((state) => {
+    return {
+      myPokemonsList: state.PokemonReducer.myPokemonsList,
+      myPokemonsListCount: state.PokemonReducer.myPokemonsListCount,
+      currentMyPokemonsListPage: state.PokemonReducer.currentMyPokemonsListPage,
+      pageLimit: state.PokemonReducer.pageLimit,
+    };
   });
 
+  // Get the user's pokemons list and divide them into per page
   useEffect(() => {
     dispatch(fetchMyPokemons());
     setCurrentlyDisplayedMyPokemonsList(
@@ -65,8 +69,8 @@ const MyPokemonList = () => {
     );
   }, []);
 
+  // Get the next set of pokemons when user changes page
   useEffect(() => {
-    console.log("abcabc", myPokemonsList);
     setCurrentlyDisplayedMyPokemonsList(
       Object.keys(myPokemonsList)
         .slice(
@@ -80,18 +84,19 @@ const MyPokemonList = () => {
     );
   }, [currentMyPokemonsListPage, myPokemonsList]);
 
+  // On click event handler when the user clicks on a pokemon card
   const onPokemonClick = (pokemonName) => {
     dispatch(fetchPokemonDetail(pokemonName));
     history.push(`/pokemon/${pokemonName}`);
   };
 
-  const onChangePage = (_, newPage) => {
+  // On click event handler when the user changes the page
+  const onChangePage = (_, newPage) =>
     dispatch(setCurrentMyPokemonsListPage(newPage));
-  };
 
-  const onReleasePokemon = (pokemonNickname) => {
+  // On click event handler when the user clicks on the release pokemon button
+  const onReleasePokemon = (pokemonNickname) =>
     dispatch(releaseMyPokemon(pokemonNickname));
-  };
 
   return (
     <div className="Global-content">
@@ -129,7 +134,9 @@ const MyPokemonList = () => {
             pages={ceiling(myPokemonsListCount / pageLimit)}
           />
         </div>
-      ) : <NothingToShow label={'Sorry, you have not caught any pokemon yet'} />}
+      ) : (
+        <NothingToShow label={"Sorry, you have not caught any pokemon yet"} />
+      )}
     </div>
   );
 };
