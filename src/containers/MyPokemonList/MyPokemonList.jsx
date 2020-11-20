@@ -10,6 +10,13 @@ import { toTitleCase } from "../../utils/string.utils";
 import useMyPokemonList from "./MyPokemonList.hook";
 
 const styles = {
+  content: {
+    maxWidth: 400,
+    minHeight:
+      "calc(100vh - 60px)" /* margin of global wrapper to take into account bottom navigation */,
+    margin: "0 auto",
+    backgroundColor: "#f9f9fb",
+  },
   cardContent: {
     paddingBottom: 0,
   },
@@ -39,7 +46,7 @@ const MyPokemonList = () => {
   } = useMyPokemonList();
 
   return (
-    <div className="Global-content">
+    <div style={styles.content}>
       {!isEmpty(currentlyDisplayedMyPokemonsList) ? (
         <div>
           {Object.keys(currentlyDisplayedMyPokemonsList).map(

@@ -6,6 +6,7 @@ import {
   fetchPokemonDetail,
   releaseMyPokemon,
   setCurrentMyPokemonsListPage,
+  setLoading,
 } from "../../actions/actions";
 import { ceiling } from "../../utils/number.utils";
 
@@ -65,6 +66,7 @@ const useMyPokemonList = () => {
 
   // On click event handler when the user clicks on a pokemon card
   const onPokemonClick = (pokemonName) => {
+    dispatch(setLoading());
     dispatch(fetchPokemonDetail(pokemonName));
     history.push(`/pokemon/${pokemonName}`);
   };

@@ -19,6 +19,7 @@ const initialState = {
   currentPokemonsListPage: 1,
   currentMyPokemonsListPage: 1,
   selectedBottomAction: 0, // the index of the bottom action used by the Material-UI library to determine which destination is rendered
+  loading: false
 };
 
 function PokemonReducer(state = initialState, action) {
@@ -33,6 +34,7 @@ function PokemonReducer(state = initialState, action) {
           },
           allPokemonsCount: action.payload.data.count,
           pageOffset: (state.currentPokemonsListPage - 1) * state.pageLimit,
+          loading: false,
         };
       }
     }
@@ -45,6 +47,7 @@ function PokemonReducer(state = initialState, action) {
             types: action.payload.data.types.map((type) => type.type),
             moves: action.payload.data.moves.map((move) => move.move),
           },
+          loading: false,
         };
       }
     }
@@ -75,7 +78,7 @@ function PokemonReducer(state = initialState, action) {
             myPokemonsList: {},
           };
         } else {
-					// Delete the pokemon and lower the total pokemon count
+          // Delete the pokemon and lower the total pokemon count
           const {
             [pokemonNickname]: nickname,
             ...newMyPokemons
@@ -111,7 +114,7 @@ function PokemonReducer(state = initialState, action) {
           },
         };
       } else {
-				// Add the pokemon to localStorage and increment the pokemon count
+        // Add the pokemon to localStorage and increment the pokemon count
         newPokemonsList = {
           count: 1,
           pokemons: { [pokemonNickname]: pokemonName },
@@ -143,6 +146,12 @@ function PokemonReducer(state = initialState, action) {
       return {
         ...state,
         selectedBottomAction,
+      };
+    }
+    case types.LOADING: {
+      return {
+        ...state,
+        loading: true
       };
     }
     default:

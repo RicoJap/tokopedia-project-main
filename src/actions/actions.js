@@ -74,3 +74,9 @@ export const setSelectedBottomAction = (bottomAction) => {
 		payload: bottomAction
 	}
 }
+
+export const setLoading = () => {
+	return {
+		type: types.LOADING,
+	}
+}

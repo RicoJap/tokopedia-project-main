@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { catchPokemon, fetchPokemonDetail } from "../../actions/actions";
+import {
+  catchPokemon,
+  fetchPokemonDetail,
+  setLoading,
+} from "../../actions/actions";
 import { isEmpty } from "../../utils/check-if-empty.utils";
 import { toTitleCase } from "../../utils/string.utils";
 import {
@@ -24,8 +28,11 @@ const usePokemonDetail = (match) => {
   const [formDialogOpen, setFormDialogOpen] = useState(false);
   const [formDialogTextField, setFormDialogTextField] = useState("");
 
-  const currentPokemon = useSelector((state) => {
-    return state.PokemonReducer.currentPokemon;
+  const { currentPokemon, loading } = useSelector((state) => {
+    return {
+      currentPokemon: state.PokemonReducer.currentPokemon,
+      loading: state.PokemonReducer.loading,
+    };
   });
 
   const pokemonNameFromSlug = match.params.pokemonName;
@@ -36,6 +43,7 @@ const usePokemonDetail = (match) => {
   // Get the pokemon render when this component first mounted
   useEffect(() => {
     if (isEmpty(currentPokemon)) {
+      dispatch(setLoading());
       dispatch(fetchPokemonDetail(pokemonNameFromSlug));
     }
   }, []);
@@ -85,19 +93,20 @@ const usePokemonDetail = (match) => {
   };
 
   return {
-      snackbarStatus,
-      setSnackbarStatus,
-      formDialogOpen,
-      setFormDialogOpen,
-      formDialogTextField,
-      setFormDialogTextField,
-      currentPokemon,
-      pokemonNameFromSlug,
-      pokemonName,
-      onCatchPokemonClick,
-      onChangeNicknameField,
-      onSubmitNewNickname
-  }
+    snackbarStatus,
+    setSnackbarStatus,
+    formDialogOpen,
+    setFormDialogOpen,
+    formDialogTextField,
+    setFormDialogTextField,
+    currentPokemon,
+    pokemonNameFromSlug,
+    pokemonName,
+    onCatchPokemonClick,
+    onChangeNicknameField,
+    onSubmitNewNickname,
+    loading,
+  };
 };
 
 export default usePokemonDetail;

@@ -11,8 +11,19 @@ import { isEmpty } from "../../utils/check-if-empty.utils";
 
 import { PRIMARY_COLOR, SECONDARY_COLOR } from "../../utils/theme.const";
 import usePokemonDetail from "./PokemonDetail.hook";
+import PokemonDetailSkeleton from "./PokemonDetail.skeleton";
 
 const styles = {
+  wrapper: {
+    backgroundColor: "#eaeaea",
+    margin: "0",
+  },
+  content: {
+    maxWidth: 400,
+    minHeight: "100vh",
+    margin: "0 auto",
+    backgroundColor: "#f9f9fb",
+  },
   pokemonDetailWrapper: {
     marginBottom: 0,
   },
@@ -52,39 +63,45 @@ const PokemonDetail = ({ match }) => {
     onCatchPokemonClick,
     onChangeNicknameField,
     onSubmitNewNickname,
+    loading,
   } = usePokemonDetail(match);
 
   return (
-    <div className="Global-wrapper" style={styles.pokemonDetailWrapper}>
-      <div className="Global-content">
-        {!isEmpty(currentPokemon) && (
-          <div>
-            <Image
-              url={currentPokemon.sprites.front_default}
-              alt={currentPokemon.name}
-              style={styles.avatar}
-            />
-            <Typography
-              label={pokemonName}
-              variant={"h3"}
-              style={styles.pokemonNameTitle}
-            />
-            <div style={styles.typesSection}>
-              <Typography label={"Types"} variant={"h4"} />
-              <List listItems={currentPokemon.types} labelSelector="name" />
-            </div>
-            <div style={styles.movesSection}>
-              <Typography label={"Moves"} variant={"h4"} />
-              <List listItems={currentPokemon.moves} labelSelector="name" />
-            </div>
-            <Button
-              onClick={onCatchPokemonClick}
-              style={styles.catchPokemonButton}
-              label={`Catch ${pokemonName}`}
-            />
-          </div>
+    <div style={styles.wrapper}>
+      <div style={styles.content}>
+        {!loading ? (
+          <>
+            {!isEmpty(currentPokemon) && (
+              <div>
+                <Image
+                  url={currentPokemon.sprites.front_default}
+                  alt={currentPokemon.name}
+                  style={styles.avatar}
+                />
+                <Typography
+                  label={pokemonName}
+                  variant={"h3"}
+                  style={styles.pokemonNameTitle}
+                />
+                <div style={styles.typesSection}>
+                  <Typography label={"Types"} variant={"h4"} />
+                  <List listItems={currentPokemon.types} labelSelector="name" />
+                </div>
+                <div style={styles.movesSection}>
+                  <Typography label={"Moves"} variant={"h4"} />
+                  <List listItems={currentPokemon.moves} labelSelector="name" />
+                </div>
+                <Button
+                  onClick={onCatchPokemonClick}
+                  style={styles.catchPokemonButton}
+                  label={`Catch ${pokemonName}`}
+                />
+              </div>
+            )}
+          </>
+        ) : (
+          <PokemonDetailSkeleton />
         )}
-
         <FormDialog
           open={formDialogOpen}
           setOpen={setFormDialogOpen}

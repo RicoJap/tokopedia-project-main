@@ -6,7 +6,21 @@ import PokemonsList from "../PokemonsList/PokemonsList";
 import MyPokemonList from "../MyPokemonList/MyPokemonList";
 import useHome from "./Home.hook";
 
-import "../../global.css";
+
+const styles = {
+  wrapper: {
+    backgroundColor: "#eaeaea",
+    margin: "0 0 60px 0",
+  },
+
+  content: {
+    maxWidth: 400,
+    minHeight:
+      "calc(100vh - 60px)" /* margin of global wrapper to take into account bottom navigation */,
+    margin: "0 auto",
+    backgroundColor: "#f9f9fb",
+  },
+};
 
 const Home = () => {
   const { onChangeBottomNavigationAction, selectedBottomAction } = useHome();
@@ -24,7 +38,7 @@ const Home = () => {
   };
 
   return (
-    <div className="Global-wrapper">
+    <div style={styles.wrapper}>
       {renderBottomTab()}
       <BottomNavigation
         selectedAction={selectedBottomAction}
