@@ -1,3 +1,14 @@
+/**
+ * toTitleCase Function
+ *
+ * @since  16/11/2020
+ * @access (public)
+ *
+ * @type     toTitleCase Function
+ * @description Returns the title case of the value that is passed
+ * @param {String}  str  String that wants to be converted to title case
+ *
+ */
 export const toTitleCase = (str) => {
   if (!!str)
     return str

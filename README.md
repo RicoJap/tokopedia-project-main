@@ -41,3 +41,10 @@ npm test
 
 ## Lighthouse Audit
 ![Lighthouse](https://imgur.com/Bmm3hly.png)
+
+## Future Improvements Needed
+- Add search bar to search pokemon
+- Test containers not just components and utils functions
+- Refine UI
+- Try to integrate GraphQL instead of using REST API
+- Encrypt the user's pokemons data stored in local storage

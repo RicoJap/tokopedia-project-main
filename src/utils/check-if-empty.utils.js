@@ -1,3 +1,14 @@
+/**
+ * isEmpty Function
+ *
+ * @since  16/11/2020
+ * @access (public)
+ *
+ * @type     isEmpty Function
+ * @description Check if a variable passed is empty
+ * @param {Any}  dataToBeChecked  Data that needs to be checked
+ *
+ */
 export const isEmpty = (dataToBeChecked) => {
   return (
     dataToBeChecked == false ||
@@ -7,6 +18,17 @@ export const isEmpty = (dataToBeChecked) => {
   );
 };
 
+/**
+ * isEmpty Function
+ *
+ * @since  16/11/2020
+ * @access (private)
+ *
+ * @type     _isEmptyObject Function
+ * @description Check object is empty
+ * @param {Object}  object  An object that wants to be checked if its empty or not
+ *
+ */
 const _isEmptyObject = (object) => {
   if (typeof object.length === "undefined") {
     // it's an Object, not an Array
