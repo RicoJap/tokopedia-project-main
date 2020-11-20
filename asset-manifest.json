@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/tokopedia-project-main/static/css/main.b5a05c10.chunk.css",
-    "main.js": "/tokopedia-project-main/static/js/main.d158a2fc.chunk.js",
-    "main.js.map": "/tokopedia-project-main/static/js/main.d158a2fc.chunk.js.map",
+    "main.css": "/tokopedia-project-main/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/tokopedia-project-main/static/js/main.0100d807.chunk.js",
+    "main.js.map": "/tokopedia-project-main/static/js/main.0100d807.chunk.js.map",
     "runtime-main.js": "/tokopedia-project-main/static/js/runtime-main.a591acc9.js",
     "runtime-main.js.map": "/tokopedia-project-main/static/js/runtime-main.a591acc9.js.map",
-    "static/js/2.e26a092a.chunk.js": "/tokopedia-project-main/static/js/2.e26a092a.chunk.js",
-    "static/js/2.e26a092a.chunk.js.map": "/tokopedia-project-main/static/js/2.e26a092a.chunk.js.map",
+    "static/js/2.01ba2957.chunk.js": "/tokopedia-project-main/static/js/2.01ba2957.chunk.js",
+    "static/js/2.01ba2957.chunk.js.map": "/tokopedia-project-main/static/js/2.01ba2957.chunk.js.map",
     "index.html": "/tokopedia-project-main/index.html",
-    "static/css/main.b5a05c10.chunk.css.map": "/tokopedia-project-main/static/css/main.b5a05c10.chunk.css.map",
-    "static/js/2.e26a092a.chunk.js.LICENSE.txt": "/tokopedia-project-main/static/js/2.e26a092a.chunk.js.LICENSE.txt",
+    "static/css/main.6dea0f05.chunk.css.map": "/tokopedia-project-main/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.01ba2957.chunk.js.LICENSE.txt": "/tokopedia-project-main/static/js/2.01ba2957.chunk.js.LICENSE.txt",
     "static/media/pokeball-big.c95b8da7.png": "/tokopedia-project-main/static/media/pokeball-big.c95b8da7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a591acc9.js",
-    "static/js/2.e26a092a.chunk.js",
-    "static/css/main.b5a05c10.chunk.css",
-    "static/js/main.d158a2fc.chunk.js"
+    "static/js/2.01ba2957.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.0100d807.chunk.js"
   ]
 }
