@@ -1,11 +1,11 @@
 import * as types from "../actions/types";
-import { isEmpty } from "../utilities/check-if-empty.utils";
+import { isEmpty } from "../utils/check-if-empty.utils";
 import {
   getItemFromLocalStorage,
   POKEMON_LOCAL_STORAGE_KEY,
   removeItemFromLocalStorage,
   setItemToLocalStorage,
-} from "../utilities/local-storage.utils";
+} from "../utils/local-storage.utils";
 
 const initialState = {
   pokemonsListCount: null,

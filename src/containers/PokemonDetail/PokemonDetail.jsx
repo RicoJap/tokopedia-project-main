@@ -10,15 +10,15 @@ import Snackbar from "../../components/Snackbar/Snackbar";
 import Typography from "../../components/Typography/Typography";
 
 import { catchPokemon, fetchPokemonDetail } from "../../actions/actions";
-import { isEmpty } from "../../utilities/check-if-empty.utils";
-import { toTitleCase } from "../../utilities/string.utils";
+import { isEmpty } from "../../utils/check-if-empty.utils";
+import { toTitleCase } from "../../utils/string.utils";
 import {
   checkIfPokemonNicknameAlreadyExists,
   POKEMON_LOCAL_STORAGE_KEY,
-} from "../../utilities/local-storage.utils";
-import { isSuccess } from "../../utilities/catch-probability";
+} from "../../utils/local-storage.utils";
+import { isSuccess } from "../../utils/catch-probability";
 
-import { PRIMARY_COLOR, SECONDARY_COLOR } from "../../utilities/theme.const";
+import { PRIMARY_COLOR, SECONDARY_COLOR } from "../../utils/theme.const";
 
 const styles = {
   pokemonDetailWrapper: {

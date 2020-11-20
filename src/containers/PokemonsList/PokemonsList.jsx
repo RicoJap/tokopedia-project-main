@@ -10,9 +10,9 @@ import {
   fetchPokemonsList,
   setCurrentPokemonsListPage,
 } from "../../actions/actions";
-import { toTitleCase } from "../../utilities/string.utils";
-import { ceiling } from "../../utilities/number.utils";
-import { isEmpty } from "../../utilities/check-if-empty.utils";
+import { toTitleCase } from "../../utils/string.utils";
+import { ceiling } from "../../utils/number.utils";
+import { isEmpty } from "../../utils/check-if-empty.utils";
 
 const PokemonsList = () => {
   const dispatch = useDispatch();

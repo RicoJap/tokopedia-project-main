@@ -9,7 +9,7 @@ import rootReducer from "./reducers";
 import { createStore, applyMiddleware } from "redux";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/styles";
-import {theme} from "./utilities/theme.const";
+import {theme} from "./utils/theme.const";
 import PokemonDetail from "./containers/PokemonDetail/PokemonDetail";
 
 const AppWrapper = () => {

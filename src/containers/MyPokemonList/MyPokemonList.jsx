@@ -12,9 +12,9 @@ import {
   releaseMyPokemon,
   setCurrentMyPokemonsListPage,
 } from "../../actions/actions";
-import { ceiling } from "../../utilities/number.utils";
+import { ceiling } from "../../utils/number.utils";
 import Button from "../../components/Button/Button";
-import { isEmpty } from "../../utilities/check-if-empty.utils";
+import { isEmpty } from "../../utils/check-if-empty.utils";
 
 const styles = {
   cardContent: {

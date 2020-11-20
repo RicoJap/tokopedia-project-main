@@ -5,9 +5,9 @@ import MuiListItemIcon from "@material-ui/core/ListItemIcon";
 import MuiListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { isEmpty } from "../../utilities/check-if-empty.utils";
-import { toTitleCase } from "../../utilities/string.utils";
-import { PRIMARY_COLOR } from "../../utilities/theme.const";
+import { isEmpty } from "../../utils/check-if-empty.utils";
+import { toTitleCase } from "../../utils/string.utils";
+import { PRIMARY_COLOR } from "../../utils/theme.const";
 
 const useListItemStyles = makeStyles({
   root: {

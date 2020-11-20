@@ -1,6 +1,6 @@
 import axios from "axios"; //import axios library for performing ajax request
 import * as types from "../actions/types";
-import { isEmpty } from "../utilities/check-if-empty.utils";
+import { isEmpty } from "../utils/check-if-empty.utils";
 
 const ROOT_URL = `https://pokeapi.co/api/v2`;
 
