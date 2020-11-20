@@ -30,7 +30,8 @@ const useCardStyles = makeStyles({
 
 const Card = ({
   label,
-  labelVariant = "p",
+  labelVariant = "h6",
+  subLabel,
   children,
   styles = {},
   separateContentAndButtons = false,
@@ -44,6 +45,7 @@ const Card = ({
     <MuiCard classes={cardStyles} {...attributes}>
       <MuiCardContent style={styles.cardContent}>
         <Typography label={label} variant={labelVariant} data-testid="card-label" />
+        {!!subLabel && <Typography label={subLabel} variant="subtitle2" color="textSecondary" data-testid="card-sub-label" />}
         {separateContentAndButtons && <Divider style={styles.divider} />}
         {!!cardActionsChildren ? (
           <MuiCardActions style={styles.cardActions}>

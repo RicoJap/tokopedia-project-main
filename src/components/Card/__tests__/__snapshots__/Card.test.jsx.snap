@@ -7,12 +7,12 @@ exports[` 1`] = `
   <div
     className="MuiCardContent-root"
   >
-    <span
-      className="MuiTypography-root"
+    <h6
+      className="MuiTypography-root MuiTypography-h6"
       data-testid="card-label"
     >
       Test Card
-    </span>
+    </h6>
   </div>
 </div>
 `;
