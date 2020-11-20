@@ -1,3 +1,4 @@
+
 # Pokemon App (Tokopedia Project)
 
 This project is based on [Poke API](https://pokeapi.co/) and is built using:
@@ -7,6 +8,8 @@ This project is based on [Poke API](https://pokeapi.co/) and is built using:
 
 ## Demo
 [**Live Demo**](https://ricojap.github.io/tokopedia-project-main)
+
+## Screenshots
 ![Pokemons page](https://imgur.com/JSfYa2T.png)
 ![My Pokemons List](https://imgur.com/si2rgmm.png)
 ![Pokemon Detail](https://imgur.com/2eQlu6I.png)
